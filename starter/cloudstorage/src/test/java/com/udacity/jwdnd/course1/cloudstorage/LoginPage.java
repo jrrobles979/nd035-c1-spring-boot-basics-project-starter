@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage;
 
+import lombok.extern.apachecommons.CommonsLog;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@CommonsLog
 public class LoginPage {
     private WebDriver driver = null;
     private WebDriverWait wait = null;
@@ -48,10 +50,11 @@ public class LoginPage {
       //  wait.until(ExpectedConditions.or( ExpectedConditions.titleIs(TestConstants.HOME_TITLE),
       //      ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("alertLoginError"))));
 
+       // wait.until(ExpectedConditions.or( ExpectedConditions.urlContains (TestConstants.HOME_TITLE.toLowerCase()),
+       //       ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("alertLoginError"))));
+        
+        try{ Thread.sleep(1000); }catch ( InterruptedException ie ){}
 
-
-        wait.until(ExpectedConditions.or( ExpectedConditions.urlContains (TestConstants.HOME_TITLE.toLowerCase()),
-              ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("alertLoginError"))));
 
         //wait.until( webDriver -> {  webDriver.getTitle().equalsIgnoreCase(TestConstants.HOME_TITLE.toLowerCase()); }  );
     }

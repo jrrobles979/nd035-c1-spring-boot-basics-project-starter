@@ -63,16 +63,16 @@ public class SignUpPage {
 
     public void signUp(){
         btnSubmit.click();
-
+        try{ Thread.sleep(1000); }catch ( InterruptedException ie ){}
 
 
        // wait.until(ExpectedConditions.or( ExpectedConditions.visibilityOf(alertSignUpSuccess),
        //         ExpectedConditions.visibilityOf(alertSignUpError)));
 
-        wait.until(ExpectedConditions.or(
+      /*  wait.until(ExpectedConditions.or(
                 ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("alertSignUpSuccess")),
                 ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("alertSignUpError"))
-        ));
+        )); */
 
     }
 
